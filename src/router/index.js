@@ -1,6 +1,11 @@
 import { createRouter, createWebHistory } from 'vue-router'
 
 const router = createRouter({
-  history: createWebHistory('/kaliningrad-recycle/'), // Укажите здесь имя репозитория
-  routes: ['/']
+  history: createWebHistory('/kaliningrad-recycle/'),
+  routes: [{ 
+      path: '/', 
+      component: () => import('@/components/MasterComponent.vue') // Укажите ваш компонент для главной страницы
+    }]
 })
+
+export { router } 
