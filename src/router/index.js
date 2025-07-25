@@ -1,11 +1,12 @@
 import { createRouter, createWebHistory } from 'vue-router'
+import MasterComponent from '@/components/MasterComponent.vue' // Прямой импорт
 
 const router = createRouter({
   history: createWebHistory('/kaliningrad-recycle/'),
   routes: [{ 
       path: '/', 
-      component: () => import('@/components/MasterComponent.vue') // Укажите ваш компонент для главной страницы
+      component: MasterComponent // Используем напрямую импортированный компонент
     }]
 })
 
-export { router } 
+export default router // Меняем на default export
