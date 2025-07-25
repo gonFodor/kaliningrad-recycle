@@ -5,7 +5,7 @@
         <h3>Навигация</h3>
         <ul>
           <li><a href="#services">Услуги</a></li>
-          <li><a href="#waste">Отходы</a></li>
+          <!--<li><a href="#waste">Отходы</a></li>-->
           <li><a href="#about">О компании</a></li>
           <!--<li><a href="#contacts">Контакты</a></li>-->
         </ul>

@@ -4,9 +4,9 @@
       <div class="icon">{{ '♻️' }}</div>
       <nav class="nav">
         <a href="#services">Услуги</a>
-        <a href="#waste">Отходы</a>
+        <!--<a href="#waste">Отходы</a>-->
         <a href="#about">О компании</a>
-        <a href="#contacts">Контакты</a>
+        <!--<a href="#contacts">Контакты</a>-->
       </nav>
       <div class="contacts">
         <a href="tel:+74012632337">+7 (401) 263-23-37</a>

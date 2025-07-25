@@ -8,18 +8,20 @@
 Кроме того, по итогам года мы подписываем Акт утилизации отходов, который позволяет уменьшить экологический сбор. К этому акту мы прикладываем журнал движения отходов, который является неотъемлемой частью данного акта.
 </p>
       </div>
-      <div class="licenses">
-        <h3>Лицензии</h3>
-        <div class="">
-          Ростехнадзора РФ № 39-00148 от 28.07.2016 года «на право обращения с отходами»
-        </div>
-      </div>
+      
       <!--<div class="gallery">
         <h3>Наша техника</h3>
         <div class="gallery-grid">
         </div>
       </div>-->
     </div>
+
+    <div class="about-content">
+        <h3>Лицензии</h3>
+        <div class="">
+          Ростехнадзора РФ № 39-00148 от 28.07.2016 года «на право обращения с отходами»
+        </div>
+      </div>
 
     <div class="about-content">
         <h3>Экология в действии с 1946 года</h3>
@@ -35,9 +37,8 @@
         </div>
       </div>
 
-      <div class="about-content">
-        
-        <div class="">
+      <div>
+        <div class="wrap-text">
           «С 1946 года перерабатываем макулатуру и пластик, превращая отходы в полезные товары. Работаем на современном оборудовании, заботясь об экологии Калининградской области.»
         </div>
       </div>
@@ -58,11 +59,20 @@ export default {
   margin: 0 auto;
 }
 .about-content > div {
+  padding: 10px 20px;
   margin-bottom: 2rem;
 }
 .license-grid, .gallery-grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
   gap: 1rem;
+}
+
+.wrap-text {
+  text-align: center;
+  font-size: x-large;
+  padding: 10px 20px;
+  border: 2px solid green;
+  border-radius: 15px;
 }
 </style>
