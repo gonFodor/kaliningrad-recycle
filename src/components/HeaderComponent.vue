@@ -9,7 +9,7 @@
         <a href="#contacts">Контакты</a>
       </nav>
       <div class="contacts">
-        <a href="tel:+79999999999">+7 (999) 999-99-99</a>
+        <a href="tel:+74012632337">+7 (401) 263-23-37</a>
       </div>
       <button class="burger" @click="toggleMenu">☰</button>
     </div>

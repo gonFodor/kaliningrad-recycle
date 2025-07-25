@@ -7,19 +7,20 @@
           <li><a href="#services">Услуги</a></li>
           <li><a href="#waste">Отходы</a></li>
           <li><a href="#about">О компании</a></li>
-          <li><a href="#contacts">Контакты</a></li>
+          <!--<li><a href="#contacts">Контакты</a></li>-->
         </ul>
       </div>
       <div class="footer-contacts">
         <h3>Контакты</h3>
-        <p>Телефон: <a href="tel:+79999999999">+7 (999) 999-99-99</a></p>
-        <p>Email: <a href="mailto:info@example.com">info@example.com</a></p>
+        <p>Телефон: <a href="tel:+74012632337">+7 (401) 263-23-37</a></p>
+        <p>Email: <a href="mailto:vtorres@bk.ru">vtorres@bk.ru</a></p>
       </div>
       <div class="footer-legal">
         <h3>Реквизиты</h3>
-        <p>ООО "Компания"</p>
-        <p>ИНН 1234567890</p>
-        <p>ОГРН 1234567890123</p>
+        <p>ЗАО "Калининградвторресурсы»</p>
+        <p>ИНН 3907000720</p>
+        <p>ОГРН 1023901641950</p>
+        <p>Адрес: 236034, г. Калининград, ул. Новинская, 1</p>
       </div>
     </div>
     <div class="copyright">

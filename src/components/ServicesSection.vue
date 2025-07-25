@@ -1,11 +1,11 @@
 <template>
   <section id="services" class="services">
-    <h2 class="section-title">Наши услуги</h2>
+    <h2 class="section-title">Покупка вторичных отходов</h2>
     <div class="services-grid">
       <div v-for="service in services" :key="service.id" class="service-card">
         <div class="icon">{{ service.icon }}</div>
-        <h3>{{ service.title }}</h3>
-        <p>{{ service.description }}</p>
+        <h2>{{ service.title }}</h2>
+        <!--<p>{{ service.description }}</p>-->
       </div>
     </div>
   </section>
@@ -26,7 +26,7 @@ export default {
 <style scoped>
 .services {
   padding: 4rem 1rem;
-  max-width: 1200px;
+  max-width: 1000px;
   margin: 0 auto;
 }
 .section-title {
@@ -48,7 +48,7 @@ export default {
   transform: translateY(-5px);
 }
 .icon {
-  font-size: 2rem;
+  font-size: 3rem;
   margin-bottom: 1rem;
 }
 </style>

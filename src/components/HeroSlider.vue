@@ -1,12 +1,12 @@
 <template>
   <section class="hero">
-    <div class="slider">      
+    <div class="slider">
+
       <div v-for="(slide, index) in slides" :key="index" class="slide" :class="{ active: currentSlide === index }">
-        <img :src="slide.image" :title="slide.title" style="border-radius: 8px;">
+        <img :src="slide.image"  :title="slide.title" style="border-radius: 8px;">
         <div class="content">
           <h1>{{ slide.title }}</h1>
           <p>{{ slide.description }}</p>
-          <button class="btn">Узнать больше</button>
         </div>
       </div>
       <div class="dots">
@@ -19,6 +19,11 @@
 </template>
 
 <script>
+import image1 from '@/assets/images/DSC_02391.jpg'
+import image2 from '@/assets/images/DSCN4573.jpg'
+import image3 from '@/assets/images/DSCN4578.jpg'
+import image4 from '@/assets/images/DSCN4600.jpg'
+
 
 export default {
   name: 'HeroSlider',
@@ -27,23 +32,23 @@ export default {
       currentSlide: 0,
       slides: [
         { 
-          image: '/src/assets/files/DSC_02391.jpg',
+          image: image1,
           title: 'Заголовок слайда 1',
           description: 'Описание слайда 1'
         },
         { 
-          image: '/src/assets/files/DSCN4573.jpg',
-          title: 'Заголовок слайда 1',
+          image: image2,
+          title: 'Заголовок слайда 2',
           description: 'Описание слайда 1'
         },
         { 
-          image: '/src/assets/files/DSCN4578.jpg',
-          title: 'Заголовок слайда 1',
+          image: image3,
+          title: 'Заголовок слайда 3',
           description: 'Описание слайда 1'
         },
         { 
-          image: '/src/assets/files/DSCN4600.jpg',
-          title: 'Заголовок слайда 1',
+          image: image4,
+          title: 'Заголовок слайда 4',
           description: 'Описание слайда 1'
         },
         
