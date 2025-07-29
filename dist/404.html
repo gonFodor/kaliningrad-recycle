@@ -1,15 +1,9 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <script>
-    // Редирект на главную с сохранением пути
-    const path = window.location.pathname
-      .replace('/kaliningrad-recycle', '')
-      .replace(/^\//, '')
-    window.location.href = `/kaliningrad-recycle/${path ? '#' + path : ''}`
-  </script>
-</head>
-<body>
-  Redirecting...
-</body>
+  <head>
+    <script>
+      sessionStorage.redirect = location.href;
+    </script>
+    <meta http-equiv="refresh" content="0;URL='/kaliningrad-recycle/'"></meta>
+  </head>
 </html>

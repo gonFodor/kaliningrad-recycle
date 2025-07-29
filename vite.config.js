@@ -7,7 +7,15 @@ export default defineConfig({
   base: '/kaliningrad-recycle/',
   resolve: {
     alias: {
-      '@': path.resolve(__dirname, './src')
+      '@': path.resolve(__dirname, './src'),
+      '~@': path.resolve(__dirname, './src') // Дополнительный алиас
+    }
+  },
+  css: {
+    preprocessorOptions: {
+      scss: {
+        additionalData: `@import "@/assets/css/main.css";`
+      }
     }
   }
-})
+  })
