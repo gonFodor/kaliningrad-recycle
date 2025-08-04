@@ -1,8 +1,10 @@
 <template>
   <div id="app">
-    <HeaderComponent />
-    
+    <div>
+      <HeaderComponent />
+    </div>
     <main>
+      
       <HeroSlider />
       <ServicesSection :services="services" />
       <!--<WasteTypes :wasteTypes="wasteTypes" />-->
