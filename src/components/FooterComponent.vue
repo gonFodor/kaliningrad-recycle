@@ -30,7 +30,7 @@
             <p class="footer-text">ЗАО "Калининградвторресурсы"</p>
             <p class="footer-text">ИНН 3907000720</p>
             <p class="footer-text">ОГРН 1023901641950</p>
-            <p class="footer-text">Адрес: 236034, г. Калининград, ул. Новинская, 1</p>
+            <p class="footer-text">Адрес: г.Калининград, ул. Дзержинского 170а</p>
           </div>
         </div>
       </div>
