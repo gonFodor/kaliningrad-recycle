@@ -1,8 +1,8 @@
-import { createRouter, createWebHashHistory  } from 'vue-router'
+import { createRouter, createWebHistory } from 'vue-router'
 import MasterComponent from '@/components/MasterComponent.vue'
 
 const router = createRouter({
-  history: createWebHashHistory(), // Просто замените эту строку!
+  history: createWebHistory(), // Возвращаем history-режим
   routes: [
     { 
       path: '/',
