@@ -1,8 +1,8 @@
-import { createRouter, createWebHistory } from 'vue-router'
+import { createRouter, createWebHashHistory  } from 'vue-router'
 import MasterComponent from '@/components/MasterComponent.vue'
 
 const router = createRouter({
-  history: createWebHistory('/kaliningrad-recycle/'), // Совпадает с base в vite.config.js
+  history: createWebHashHistory(), // Просто замените эту строку!
   routes: [
     { 
       path: '/',
