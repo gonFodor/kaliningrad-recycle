@@ -1,10 +1,16 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Страница не найдена</title>
+  <meta charset="utf-8">
+  <title>Редирект...</title>
+  <script>
+    // Простое решение для SPA на GitHub Pages
+    const segment = 1; // Сколько сегментов пути удалить (1 для /kaliningrad-recycle/)
+    const path = window.location.pathname.split('/').slice(segment + 1).join('/');
+    window.location.href = '/' + path + window.location.search + window.location.hash;
+  </script>
 </head>
 <body>
-  <h1>404 - Страница не найдена</h1>
-  <p><a href="/">Вернуться на главную</a></p>
+  <p>Перенаправление...</p>
 </body>
 </html>
