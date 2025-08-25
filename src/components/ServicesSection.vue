@@ -1,11 +1,15 @@
 <template>
-  <section id="services" class="services">
-    <h2 class="section-title">Покупка вторичных отходов</h2>
-    <div class="services-grid">
-      <div v-for="service in services" :key="service.id" class="service-card">
-        <div class="icon">{{ service.icon }}</div>
-        <h2>{{ service.title }}</h2>
-        <!--<p>{{ service.description }}</p>-->
+  <section id="services" class="services-section">
+    <div class="container">
+      <h2 class="section-title">Наши услуги</h2>
+      <p class="section-subtitle">Комплексные решения для бизнеса и экологии</p>
+      
+      <div class="services-grid">
+        <div class="service-card" v-for="(service, index) in services" :key="index">
+          <div class="service-icon">{{ service.icon }}</div>
+          <h3 class="service-title">{{ service.title }}</h3>
+          <p class="service-description">{{ service.description }}</p>
+        </div>
       </div>
     </div>
   </section>
@@ -14,68 +18,104 @@
 <script>
 export default {
   name: 'ServicesSection',
-  props: {
-    services: {
-      type: Array,
-      required: true
+  data() {
+    return {
+      services: [
+        {
+          icon: '🚛',
+          title: 'Бесплатный вывоз',
+          description: 'Собственный автопарк и грузчики для вывоза вторсырья'
+        },
+        {
+          icon: '📋',
+          title: 'Документы',
+          description: 'Полный пакет документов для отчётности и снижения экосбора'
+        },
+        {
+          icon: '⚙️',
+          title: 'Оборудование',
+          description: 'Установка прессов и контейнеров на вашей территории'
+        },
+        {
+          icon: '📞',
+          title: 'Консультации',
+          description: 'Профессиональные консультации по обращению с отходами'
+        }
+      ]
     }
   }
 }
 </script>
 
 <style scoped>
-.services {
-  padding: clamp(2rem, 5vw, 4rem) clamp(1rem, 3vw, 2rem);
-  max-width: min(1000px, 90%);
-  margin: 0 auto;
+.services-section {
+  padding: clamp(3rem, 6vw, 5rem) 0;
+  background: linear-gradient(135deg, var(--color-bg-light) 0%, var(--color-bg) 100%);
 }
 
 .section-title {
   text-align: center;
-  margin-bottom: clamp(1.5rem, 3vw, 2rem);
-  font-size: clamp(1.5rem, 3vw, 2rem);
+  margin-bottom: 1rem;
+  font-size: clamp(1.8rem, 4vw, 2.5rem);
+  color: var(--color-secondary);
+}
+
+.section-subtitle {
+  text-align: center;
+  max-width: 600px;
+  margin: 0 auto clamp(2.5rem, 5vw, 3.5rem);
+  font-size: clamp(1.1rem, 1.8vw, 1.3rem);
+  color: var(--color-text-light);
+  font-weight: 500;
 }
 
 .services-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(min(250px, 100%), 1fr));
-  gap: clamp(1rem, 2vw, 2rem);
+  grid-template-columns: repeat(auto-fit, minmax(min(280px, 100%), 1fr));
+  gap: clamp(1.5rem, 3vw, 2rem);
 }
 
 .service-card {
-  padding: clamp(1rem, 2vw, 1.5rem);
-  border-radius: 8px;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-  transition: all 0.3s ease;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+  background: var(--color-bg-section);
+  padding: clamp(1.5rem, 2.5vw, 2rem);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-md);
   text-align: center;
-  background: white;
+  transition: var(--transition);
+  border: 1px solid var(--color-border);
 }
 
 .service-card:hover {
   transform: translateY(-5px);
-  box-shadow: 0 5px 15px rgba(0,0,0,0.15);
+  box-shadow: var(--shadow-lg);
+  border-color: var(--color-primary);
 }
 
-.icon {
-  font-size: clamp(2rem, 6vw, 3rem);
-  margin-bottom: clamp(0.75rem, 1.5vw, 1rem);
+.service-icon {
+  font-size: clamp(2.5rem, 5vw, 3.5rem);
+  margin-bottom: clamp(1rem, 1.5vw, 1.25rem);
+  transition: transform 0.3s ease;
+}
+
+.service-card:hover .service-icon {
+  transform: scale(1.1);
 }
 
 .service-title {
-  font-size: clamp(1rem, 1.25vw, 1.25rem);
-  margin-bottom: 0.5rem;
+  font-size: clamp(1.2rem, 1.5vw, 1.3rem);
+  font-weight: 600;
+  color: var(--color-secondary);
+  margin-bottom: 0.75rem;
 }
 
-/* Опционально для будущего описания */
-.service-desc {
-  font-size: clamp(0.875rem, 1vw, 1rem);
-  color: #666;
+.service-description {
+  font-size: clamp(0.95rem, 1.1vw, 1.05rem);
+  color: var(--color-text-light);
+  line-height: 1.5;
+  margin-bottom: 0;
 }
 
-@media (max-width: 600px) {
+@media (max-width: 768px) {
   .services-grid {
     grid-template-columns: 1fr;
     max-width: 400px;

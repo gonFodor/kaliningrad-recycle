@@ -8,10 +8,11 @@
       
       <nav class="nav" :class="{ 'nav--active': isMenuOpen }">
         <div class="nav-links">
+          <a href="#materials" class="nav-link" @click="closeMenu">Сырьё</a>
           <a href="#services" class="nav-link" @click="closeMenu">Услуги</a>
           <a href="#about" class="nav-link" @click="closeMenu">О компании</a>
         </div>
-        <a href="tel:+74012632337" class="nav-contact">+7 (401) 263-23-37</a>
+        <a href="tel:+74012686002" class="nav-contact">+7 (4012) 68-60-02</a>
       </nav>
       
       <button class="burger" @click="toggleMenu" :aria-expanded="isMenuOpen" aria-label="Меню">
@@ -45,24 +46,31 @@ export default {
 </script>
 
 <style scoped>
-/* Базовые стили */
+/* Базовые стили - ОБНОВЛЕНО И ИСПРАВЛЕНО */
 .header {
-  background: #ffffff;
-  box-shadow: 0 2px 15px rgba(0, 0, 0, 0.08);
+  background: var(--color-bg-section);
+  box-shadow: var(--shadow-sm);
   position: fixed;
   width: 100%;
   top: 0;
   z-index: 1000;
   padding: 0;
+  backdrop-filter: blur(10px);
+  background: rgba(249, 250, 251, 0.95);
+  /* ДОБАВЛЕНО: Центрирование содержимого */
+  display: flex;
+  justify-content: center;
 }
 
 .header-container {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  max-width: min(1200px, 90%);
+  width: 100%; /* ИЗМЕНЕНО: было max-width */
+  max-width: min(1200px, 90%); /* ДОБАВЛЕНО: ограничение ширины */
   padding: 0 clamp(1rem, 3vw, 2rem);
-  height: clamp(60px, 8vw, 70px);
+  height: clamp(70px, 8vw, 80px);
+  /* margin: 0 auto; УДАЛЕНО: теперь центрируется через .header */
 }
 
 .logo-wrapper {
@@ -77,13 +85,20 @@ export default {
 }
 
 .logo-icon {
-  font-size: clamp(1.5rem, 3vw, 1.8rem);
+  font-size: clamp(1.8rem, 3vw, 2rem);
+  background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-primary-dark) 100%);
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .logo-text {
   font-weight: 700;
   font-size: clamp(1rem, 1.5vw, 1.2rem);
-  color: #2c3e50;
+  color: var(--color-secondary);
   white-space: nowrap;
 }
 
@@ -95,22 +110,22 @@ export default {
 
 .nav-links {
   display: flex;
-  gap: clamp(1rem, 2vw, 1.5rem);
+  gap: clamp(1.25rem, 2.5vw, 2rem);
 }
 
 .nav-link {
-  color: #2c3e50;
-  font-weight: 600;
+  color: var(--color-secondary);
+  font-weight: 500;
   font-size: clamp(0.95rem, 1.1vw, 1.05rem);
   text-decoration: none;
   position: relative;
   padding: 0.5rem 0;
-  transition: color 0.3s;
+  transition: var(--transition);
   white-space: nowrap;
 }
 
 .nav-link:hover {
-  color: #27ae60;
+  color: var(--color-primary);
 }
 
 .nav-link::after {
@@ -120,7 +135,7 @@ export default {
   left: 0;
   width: 0;
   height: 2px;
-  background: #27ae60;
+  background: var(--color-primary);
   transition: width 0.3s;
 }
 
@@ -129,21 +144,25 @@ export default {
 }
 
 .nav-contact {
-  background: #27ae60;
+  background: var(--color-primary);
   color: white;
-  padding: 0.6rem 1.2rem;
-  border-radius: 6px;
+  padding: 0.75rem 1.5rem;
+  border-radius: var(--radius-md);
   font-weight: 600;
   font-size: clamp(0.9rem, 1.1vw, 1rem);
   text-decoration: none;
-  transition: all 0.3s;
+  transition: var(--transition);
   white-space: nowrap;
+  border: 2px solid transparent;
 }
 
 .nav-contact:hover {
-  background: #219653;
+  background: transparent;
+  color: var(--color-primary);
+  border-color: var(--color-primary);
   transform: translateY(-2px);
-  box-shadow: 0 4px 12px rgba(39, 174, 96, 0.25);
+  box-shadow: var(--shadow-sm);
+  text-decoration: none;
 }
 
 .burger {
@@ -160,21 +179,31 @@ export default {
   display: block;
   width: 24px;
   height: 2px;
-  background: #2c3e50;
+  background: var(--color-secondary);
   margin: 5px 0;
   transition: transform 0.3s, opacity 0.3s, background 0.3s;
 }
 
 /* Мобильное меню */
 @media (max-width: 992px) {
+  .header {
+    justify-content: space-between; /* ИЗМЕНЕНО: для мобильной версии */
+    padding: 0 clamp(1rem, 3vw, 2rem);
+  }
+  
+  .header-container {
+    max-width: none; /* ИЗМЕНЕНО: для мобильной версии */
+    padding: 0;
+  }
+  
   .nav {
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
     height: 100vh;
-    background: rgba(255, 255, 255, 0.98);
-    backdrop-filter: blur(5px);
+    background: rgba(249, 250, 251, 0.98);
+    backdrop-filter: blur(10px);
     flex-direction: column;
     justify-content: center;
     align-items: center;
@@ -214,7 +243,7 @@ export default {
   
   .burger[aria-expanded="true"] .burger-line:nth-child(1) {
     transform: translateY(7px) rotate(45deg);
-    background: #2c3e50;
+    background: var(--color-secondary);
   }
   
   .burger[aria-expanded="true"] .burger-line:nth-child(2) {
@@ -223,7 +252,7 @@ export default {
   
   .burger[aria-expanded="true"] .burger-line:nth-child(3) {
     transform: translateY(-7px) rotate(-45deg);
-    background: #2c3e50;
+    background: var(--color-secondary);
   }
   
   .burger[aria-expanded="true"] {
@@ -244,6 +273,12 @@ export default {
   
   .nav-contact {
     font-size: 1rem;
+  }
+  
+  .logo-icon {
+    width: 35px;
+    height: 35px;
+    font-size: 1.5rem;
   }
 }
 </style>

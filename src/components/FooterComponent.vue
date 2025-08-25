@@ -55,9 +55,10 @@ export default {
 
 <style scoped>
 .footer {
-  background: #2c3e50;
+  background: var(--color-secondary);
   color: #ecf0f1;
-  padding: clamp(2rem, 5vw, 3rem) 0 0;
+  padding: clamp(2.5rem, 5vw, 3.5rem) 0 0;
+  margin-top: auto;
 }
 
 .footer-container {
@@ -69,8 +70,8 @@ export default {
 .footer-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(min(250px, 100%), 1fr));
-  gap: clamp(1.5rem, 3vw, 2.5rem);
-  margin-bottom: clamp(1.5rem, 3vw, 2rem);
+  gap: clamp(2rem, 4vw, 3rem);
+  margin-bottom: clamp(2rem, 4vw, 2.5rem);
 }
 
 .footer-section {
@@ -79,11 +80,12 @@ export default {
 }
 
 .footer-heading {
-  color: #27ae60;
-  font-size: clamp(1.1rem, 1.3vw, 1.25rem);
-  margin-bottom: 1.25rem;
+  color: var(--color-primary);
+  font-size: clamp(1.2rem, 1.5vw, 1.3rem);
+  margin-bottom: 1.5rem;
   position: relative;
-  padding-bottom: 0.5rem;
+  padding-bottom: 0.75rem;
+  font-weight: 600;
 }
 
 .footer-heading::after {
@@ -91,9 +93,10 @@ export default {
   position: absolute;
   bottom: 0;
   left: 0;
-  width: 50px;
-  height: 2px;
-  background: #27ae60;
+  width: 40px;
+  height: 3px;
+  background: var(--color-primary);
+  border-radius: 2px;
 }
 
 .footer-links {
@@ -102,57 +105,79 @@ export default {
   margin: 0;
   display: flex;
   flex-direction: column;
-  gap: 0.75rem;
+  gap: 0.9rem;
 }
 
 .footer-link {
   color: #bdc3c7;
   text-decoration: none;
-  transition: color 0.3s ease;
+  transition: var(--transition);
   font-size: clamp(0.95rem, 1.1vw, 1.05rem);
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
 }
 
 .footer-link:hover {
   color: #ffffff;
-  text-decoration: underline;
+  transform: translateX(5px);
+  text-decoration: none;
+}
+
+.footer-link::before {
+  content: '→';
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.footer-link:hover::before {
+  opacity: 1;
 }
 
 .footer-contacts {
   display: flex;
   flex-direction: column;
-  gap: 0.75rem;
+  gap: 1rem;
 }
 
 .footer-contact-item {
   margin: 0;
   display: flex;
   flex-wrap: wrap;
-  gap: 0.3rem;
+  align-items: center;
+  gap: 0.5rem;
 }
 
 .contact-label {
   color: #95a5a6;
+  font-size: clamp(0.9rem, 1vw, 1rem);
 }
 
 .contact-link {
   font-weight: 500;
+  color: #bdc3c7;
+}
+
+.contact-link:hover {
+  color: #ffffff;
 }
 
 .footer-legal {
   display: flex;
   flex-direction: column;
-  gap: 0.75rem;
+  gap: 0.9rem;
 }
 
 .footer-text {
   margin: 0;
   font-size: clamp(0.95rem, 1.1vw, 1.05rem);
-  line-height: 1.5;
+  line-height: 1.6;
+  color: #bdc3c7;
 }
 
 .footer-bottom {
-  border-top: 1px solid rgba(255, 255, 255, 0.1);
-  padding: clamp(1rem, 2vw, 1.5rem) 0;
+  border-top: 1px solid rgba(255, 255, 255, 0.15);
+  padding: clamp(1.25rem, 2.5vw, 1.75rem) 0;
   text-align: center;
 }
 
@@ -162,10 +187,35 @@ export default {
   font-size: clamp(0.9rem, 1vw, 1rem);
 }
 
+/* Адаптивность */
 @media (max-width: 768px) {
   .footer-grid {
     grid-template-columns: 1fr;
-    gap: 2rem;
+    gap: 2.5rem;
+    text-align: center;
+  }
+  
+  .footer-heading::after {
+    left: 50%;
+    transform: translateX(-50%);
+  }
+  
+  .footer-links {
+    align-items: center;
+  }
+  
+  .footer-contact-item {
+    justify-content: center;
+  }
+  
+  .footer-legal {
+    align-items: center;
+  }
+}
+
+@media (max-width: 480px) {
+  .footer {
+    padding: 2rem 0 0;
   }
   
   .footer-heading {
@@ -174,6 +224,10 @@ export default {
   
   .footer-link, .footer-text {
     font-size: 1rem;
+  }
+  
+  .contact-label {
+    font-size: 0.9rem;
   }
 }
 </style>
