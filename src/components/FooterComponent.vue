@@ -13,14 +13,21 @@
         <div class="footer-section">
           <h3 class="footer-heading">Контакты</h3>
           <div class="footer-contacts">
-            <p class="footer-contact-item">
-              <span class="contact-label">Телефон:</span>
-              <a href="tel:+74012632337" class="footer-link contact-link">+7 (401) 263-23-37</a>
-            </p>
-            <p class="footer-contact-item">
+            <div class="footer-contact-item">
+              <span class="contact-label">Телефоны:</span>
+              <div class="phones-container">
+                <a href="tel:+79097978734" class="footer-link contact-link phone-link">
+                  +7 909 797-87-34
+                </a>
+                <a href="tel:632337" class="footer-link contact-link phone-link">
+                  63-23-37
+                </a>
+              </div>
+            </div>
+            <div class="footer-contact-item">
               <span class="contact-label">Email:</span>
               <a href="mailto:vtorres@bk.ru" class="footer-link contact-link">vtorres@bk.ru</a>
-            </p>
+            </div>
           </div>
         </div>
 
@@ -137,7 +144,7 @@ export default {
 .footer-contacts {
   display: flex;
   flex-direction: column;
-  gap: 1rem;
+  gap: 1.2rem;
 }
 
 .footer-contact-item {
@@ -151,11 +158,39 @@ export default {
 .contact-label {
   color: #95a5a6;
   font-size: clamp(0.9rem, 1vw, 1rem);
+  font-weight: 500;
+}
+
+.phones-container {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+}
+
+.phone-link {
+  padding: 0.2rem 0;
+  transition: all 0.3s ease;
+  display: block;
+  margin-left: 1rem;
+  position: relative;
+}
+
+.phone-link::before {
+  content: '—';
+  position: absolute;
+  left: -1rem;
+  color: #95a5a6;
+}
+
+.phone-link:hover {
+  color: #ffffff;
+  transform: translateX(3px);
 }
 
 .contact-link {
   font-weight: 500;
   color: #bdc3c7;
+  transition: var(--transition);
 }
 
 .contact-link:hover {
@@ -205,7 +240,19 @@ export default {
   }
   
   .footer-contact-item {
-    justify-content: center;
+    align-items: center;
+  }
+  
+  .phones-container {
+    align-items: center;
+  }
+  
+  .phone-link {
+    margin-left: 0;
+  }
+  
+  .phone-link::before {
+    display: none;
   }
   
   .footer-legal {
@@ -228,6 +275,14 @@ export default {
   
   .contact-label {
     font-size: 0.9rem;
+  }
+  
+  .phones-container {
+    gap: 0.3rem;
+  }
+  
+  .phone-link {
+    font-size: 0.95rem;
   }
 }
 </style>

@@ -12,7 +12,8 @@
           <a href="#services" class="nav-link" @click="closeMenu">Услуги</a>
           <a href="#about" class="nav-link" @click="closeMenu">О компании</a>
         </div>
-        <a href="tel:+74012686002" class="nav-contact">+7 (4012) 68-60-02</a>
+        <a href="tel:+79097978734" class="nav-contact">+7 909 797-87-34</a>
+        <a href="tel:632337" class="nav-contact">63 23 37</a>
       </nav>
       
       <button class="burger" @click="toggleMenu" :aria-expanded="isMenuOpen" aria-label="Меню">
@@ -46,7 +47,7 @@ export default {
 </script>
 
 <style scoped>
-/* Базовые стили - ОБНОВЛЕНО И ИСПРАВЛЕНО */
+/* Базовые стили */
 .header {
   background: var(--color-bg-section);
   box-shadow: var(--shadow-sm);
@@ -57,7 +58,6 @@ export default {
   padding: 0;
   backdrop-filter: blur(10px);
   background: rgba(249, 250, 251, 0.95);
-  /* ДОБАВЛЕНО: Центрирование содержимого */
   display: flex;
   justify-content: center;
 }
@@ -66,11 +66,10 @@ export default {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  width: 100%; /* ИЗМЕНЕНО: было max-width */
-  max-width: min(1200px, 90%); /* ДОБАВЛЕНО: ограничение ширины */
+  width: 100%;
+  max-width: min(1200px, 90%);
   padding: 0 clamp(1rem, 3vw, 2rem);
   height: clamp(70px, 8vw, 80px);
-  /* margin: 0 auto; УДАЛЕНО: теперь центрируется через .header */
 }
 
 .logo-wrapper {
@@ -93,6 +92,7 @@ export default {
   display: flex;
   align-items: center;
   justify-content: center;
+  padding-bottom: 6px;
 }
 
 .logo-text {
@@ -143,6 +143,13 @@ export default {
   width: 100%;
 }
 
+.header-contacts {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 0.2rem;
+}
+
 .nav-contact {
   background: var(--color-primary);
   color: white;
@@ -163,6 +170,13 @@ export default {
   transform: translateY(-2px);
   box-shadow: var(--shadow-sm);
   text-decoration: none;
+}
+
+.nav-contact-secondary {
+  font-size: clamp(0.8rem, 1vw, 0.9rem);
+  color: var(--color-text-light);
+  font-weight: 500;
+  text-align: right;
 }
 
 .burger {
@@ -187,12 +201,12 @@ export default {
 /* Мобильное меню */
 @media (max-width: 992px) {
   .header {
-    justify-content: space-between; /* ИЗМЕНЕНО: для мобильной версии */
+    justify-content: space-between;
     padding: 0 clamp(1rem, 3vw, 2rem);
   }
   
   .header-container {
-    max-width: none; /* ИЗМЕНЕНО: для мобильной версии */
+    max-width: none;
     padding: 0;
   }
   
@@ -232,9 +246,19 @@ export default {
     height: 3px;
   }
   
+  .header-contacts {
+    align-items: center;
+    gap: 0.5rem;
+  }
+  
   .nav-contact {
     font-size: 1.2rem;
     padding: 0.8rem 1.8rem;
+  }
+  
+  .nav-contact-secondary {
+    font-size: 1rem;
+    text-align: center;
   }
   
   .burger {
@@ -273,6 +297,11 @@ export default {
   
   .nav-contact {
     font-size: 1rem;
+    padding: 0.6rem 1.2rem;
+  }
+  
+  .nav-contact-secondary {
+    font-size: 0.85rem;
   }
   
   .logo-icon {
