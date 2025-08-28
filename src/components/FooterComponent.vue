@@ -132,7 +132,6 @@ export default {
 }
 
 .footer-link::before {
-  content: '→';
   opacity: 0;
   transition: opacity 0.3s ease;
 }
@@ -235,13 +234,12 @@ export default {
     left: 50%;
     transform: translateX(-50%);
   }
-  
-  .footer-links {
-    align-items: center;
-  }
-  
+    
   .footer-contact-item {
-    align-items: center;
+    align-items: start;
+    text-align: start;
+    display: flex;
+    justify-content: center;
   }
   
   .phones-container {
