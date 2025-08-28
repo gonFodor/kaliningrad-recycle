@@ -20,7 +20,7 @@
                   +7 909 797-87-34
                 </a>
                 <a href="tel:632337" class="footer-link contact-link phone-link">
-                  63-23-37
+                  +7 (4012) 63-23-37
                 </a>
               </div>
             </div>
@@ -151,11 +151,12 @@ export default {
   margin: 0;
   display: flex;
   flex-wrap: wrap;
-  align-items: center;
+  align-items: baseline;
   gap: 0.5rem;
 }
 
 .contact-label {
+  align-items: start;
   color: #95a5a6;
   font-size: clamp(0.9rem, 1vw, 1rem);
   font-weight: 500;

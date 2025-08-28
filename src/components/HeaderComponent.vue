@@ -13,7 +13,7 @@
           <a href="#about" class="nav-link" @click="closeMenu">О компании</a>
         </div>
         <a href="tel:+79097978734" class="nav-contact">+7 909 797-87-34</a>
-        <a href="tel:632337" class="nav-contact">63 23 37</a>
+        <a href="tel:+74012632337" class="nav-contact">+7 (4012) 63-23-37</a>
       </nav>
       
       <button class="burger" @click="toggleMenu" :aria-expanded="isMenuOpen" aria-label="Меню">
